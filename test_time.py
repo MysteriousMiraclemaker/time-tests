@@ -37,3 +37,11 @@ def test_notoverlap():
     assert result == expected
 
 
+def test_exact_end_start_case():
+    large = time_range("2010-01-12 10:00:00", "2010-01-12 11:00:00")
+    short = time_range("2010-01-12 11:00:00", "2010-01-12 12:00:00")
+    expected = []
+    assert compute_overlap_time(large, short) == expected
+
+
+
